@@ -1,0 +1,268 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <table id="q-graph">
+        <caption>Индикатор Эффективности</caption>
+        <tbody>
+
+            <tr class="qtr" id="q1">
+                <th scope="row">2017</th>
+                <td class="paid bar" id="bar1" style="height: 100px; width: 65px;"><p>Факт</p></td>
+            </tr>
+
+            <tr class="qtr" id="q2">
+                <th scope="row">2018</th>
+                <td class="paid bar" id="bar2" style="height: 140px; width: 65px"><p>55%</p></td>
+            </tr>
+
+            <tr class="qtr" id="q3">
+                <th scope="row">2019</th>
+                <td class="paid bar" id="bar3" style="height: 180px; width: 65px"><p>65%</p></td>
+            </tr>
+
+            <tr class="qtr" id="q4">
+                <th scope="row">2020</th>
+                <td class="paid bar" id="bar4" style="height: 220px; width: 65px"><p>75%</p></td>
+            </tr>
+
+            <tr class="qtr" id="q5">
+                <th scope="row">2021</th>
+                <td class="paid bar" id="bar5" style="height: 260px; width: 65px"><p>85%</p></td>
+            </tr>
+        </tbody>
+    </table>
+        
+    <div id="ticks">
+        <div class="tick" style="height: 59px;"><p></p></div>
+        <div class="tick" style="height: 59px;"><p></p></div>
+        <div class="tick" style="height: 59px;"><p></p></div>
+        <div class="tick" style="height: 59px;"><p></p></div>
+        <div class="tick" style="height: 59px;"><p></p></div>
+    </div>
+
+    <style>
+        body, html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "fira-sans-2", Verdana, sans-serif;
+  
+}
+
+#q-graph {
+  display: block;
+  /* fixes layout wonkiness in FF1.5 */
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin: 1.1em 0 0;
+  padding: 0;
+  background: transparent;
+  font-size: 11px;
+}
+
+#q-graph caption {
+  caption-side: top;
+  width: 575px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  top: -40px;
+  position: relative;
+  z-index: 10;
+  font-weight: bold;
+}
+
+#q-graph tr, #q-graph th, #q-graph td {
+  position: absolute;
+  bottom: 0;
+  width: 118px;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#q-graph td {
+  transition: all 0.3s ease;
+}
+
+#q-graph td:hover {
+  background-color: #4d4d4d;
+  opacity: 0.9;
+  color: white;
+}
+
+#q-graph #bar1 {
+    left: 27px;
+    background-color: #c2c1ff;
+    border-color: transparent;
+    color: #000;
+}
+
+#q-graph #bar1:hover {
+    background-color: #a8a7ff;
+}
+
+#q-graph #bar2 {
+    left: 27px;
+    background-color: #0a9ffa;
+    border-color: transparent;
+    color: #000;
+}
+
+#q-graph #bar2:hover {
+    background-color: #0a56fa;
+}
+
+#q-graph #bar3 {
+    left: 27px;
+    background-color: #07969d;
+    border-color: transparent;
+    color: #000;
+}
+
+#q-graph #bar3:hover {
+    background-color: #07915c;
+}
+
+#q-graph #bar4 {
+    left: 27px;
+    background-color: #1995c7;
+    border-color: transparent;
+    color: #000;
+}
+
+#q-graph #bar4:hover {
+    background-color: #1964c7;
+}
+
+#q-graph #bar5 {
+    left: 27px;
+    background-color: #4b5bca;
+    border-color: transparent;
+    color: #000;
+}
+
+#q-graph #bar5:hover {
+    background-color: #2724ce;
+}
+
+
+
+
+#q-graph thead tr {
+  left: 100%;
+  top: 50%;
+  bottom: auto;
+  margin: -2.5em 0 0 5em;
+}
+
+#q-graph thead th {
+  width: 7.5em;
+  height: auto;
+  padding: 0.5em 1em;
+}
+
+#q-graph thead th.sent {
+  top: 0;
+  left: 0;
+  line-height: 2;
+}
+
+#q-graph thead th.paid {
+  top: 2.75em;
+  line-height: 2;
+  left: 0;
+}
+
+#q-graph tbody tr {
+  height: 296px;
+  padding-top: 2px;
+  border-right: 1px dotted #C4C4C4;
+  color: #AAA;
+}
+
+#q-graph #q1 {
+  left: 0;
+}
+
+#q-graph #q2 {
+  left: 115px;
+}
+
+#q-graph #q3 {
+  left: 230px;
+}
+
+#q-graph #q4 {
+  left: 345px;
+}
+
+#q-graph #q5 {
+    left: 460px;
+    border-right: none;
+}
+
+#q-graph tbody th {
+  bottom: -1.75em;
+  vertical-align: top;
+  font-weight: normal;
+  color: #333;
+}
+
+#q-graph .bar {
+  width: 60px;
+  border: 1px solid;
+  border-bottom: none;
+  color: #000;
+}
+
+
+#q-graph .bar p {
+  margin: -25px 0 0;
+  padding: 0;
+  color: #000!important;
+}
+
+
+
+#ticks {
+  position: relative;
+  top: -300px;
+  left: 2px;
+  width: 596px;
+  height: 300px;
+  z-index: 1;
+  margin-bottom: -300px;
+  font-size: 10px;
+  font-family: "fira-sans-2", Verdana, sans-serif;
+}
+
+#ticks .tick {
+  position: relative;
+  border-bottom: 1px dotted #C4C4C4;
+  width: 575px;
+}
+
+#ticks .tick p {
+  position: absolute;
+  left: -5em;
+  top: -0.8em;
+  margin: 0 0 0 0.5em;
+}
+    </style>
+    
+</body>
+</html>
